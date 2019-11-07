@@ -1,4 +1,3 @@
-console.log("S'up");
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 let locationField = document.querySelector('#location-field');
@@ -31,7 +30,7 @@ weatherForm.addEventListener('click', (e) => {
     loader.classList.add('loading');
     loaderIcon.style.display = 'block'; 
 
-    fetch(`http://localhost:3000/weather?address=${location}&units=${unit}`)
+    fetch(`/weather?address=${location}&units=${unit}`)
         .then(response => response.json())
         .then(data => {
             if(data.error) {
